@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Snake_wall : MonoBehaviour
 {
-    public int prize=0;
+   
     public int count_bad = 0;
     // Start is called before the first frame update
     void Start()

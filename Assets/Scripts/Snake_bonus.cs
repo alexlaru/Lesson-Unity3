@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Snake_bonus : MonoBehaviour
 {
+    public int prize = 0;
     // Start is called before the first frame update
     void Start()
     {
