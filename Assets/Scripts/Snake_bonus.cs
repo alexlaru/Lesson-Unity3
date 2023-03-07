@@ -18,6 +18,7 @@ public class Snake_bonus : MonoBehaviour
     public  void OnCollisionEnter(Collision collision)
     {
         gameObject.SetActive(false);
-        Debug.Log("Бонус");
+        //    Debug.Log("Бонус");
+        Snake.bonus(prize);
     }
 }
