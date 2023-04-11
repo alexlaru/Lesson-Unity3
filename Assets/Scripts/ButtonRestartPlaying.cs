@@ -13,10 +13,6 @@ public class ButtonRestartPlaying : MonoBehaviour
 
     public void PlayAgain()
     {
-
-
-    
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

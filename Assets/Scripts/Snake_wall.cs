@@ -34,7 +34,7 @@ public class Snake_wall : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         score_game = int.Parse(GameObject.Find("CanvasPlaying").transform.GetChild(0).gameObject.GetComponent<Text>().text);
-        Debug.Log(score_game + "  ++++ " );
+    //    Debug.Log(score_game + "  ++++ " );
         if (!collision.collider.TryGetComponent(out Snake snake)) return;
         Renderer SectorRenderer = GetComponent<Renderer>();
 
@@ -46,18 +46,20 @@ public class Snake_wall : MonoBehaviour
             count_snake -= count_bad;
             score_game += count_bad;
 
-            Debug.Log(score_game+"  ---- " + count_bad);
+     //       Debug.Log(score_game+"  ---- " + count_bad);
 
 
             if (count_snake >= 0)
             {
                 GameObject.Find("Snake_head").transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = count_snake.ToString();
                 GameObject.Find("CanvasPlaying").transform.GetChild(0).gameObject.GetComponent<Text>().text = score_game.ToString();
-            //    GameObject.Find("CanvasPlaying").transform.GetChild(1).gameObject.GetComponent<Text>().text = Level_Number.ToString();
+     
                 StartCoroutine(Bad_sound(snake));
             }
             else
             {
+                GameObject.Find("CanvasLoose").transform.GetChild(0).gameObject.GetComponent<Text>().text = GameObject.Find("CanvasPlaying").transform.GetChild(1).gameObject.GetComponent<Text>().text.ToString();
+
                 snake.Die();
             
             }

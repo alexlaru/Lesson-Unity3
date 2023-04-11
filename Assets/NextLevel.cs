@@ -19,10 +19,6 @@ public class NextLevel : MonoBehaviour
     public GameObject Bonus;
     public GameObject Crash;
 
-
-
-
-
     public Camera_follow_snake camera_main;
 
     private AudioSource _audio;
@@ -43,9 +39,13 @@ public class NextLevel : MonoBehaviour
     void Start()
     {
 
+
+
         GameObject.Find("CanvasPlaying").transform.GetChild(0).gameObject.GetComponent<Text>().text = "0";
 
         int levelIndex = LevelIndex;
+
+   //     Debug.Log(levelIndex + "  ====");
         // if (levelIndex == 0)
         // {
         //     LevelIndex++;
@@ -92,7 +92,7 @@ public class NextLevel : MonoBehaviour
 
                 exist_object = RandomRange(random, 0, 2) == 1 ? true : false;
 
-                Debug.Log("j " + exist_object);
+        //        Debug.Log("j " + exist_object);
                 if (exist_object)
                 {
                     //        value_crash = Random.Range(MinCrash, MaxCrash);
@@ -158,6 +158,7 @@ public class NextLevel : MonoBehaviour
 
         
             GameObject.Find("CanvasWin").transform.GetChild(0).gameObject.GetComponent<Text>().text = GameObject.Find("CanvasPlaying").transform.GetChild(0).gameObject.GetComponent<Text>().text.ToString();
+      //      GameObject.Find("CanvasWin").transform.GetChild(1).gameObject.GetComponent<Text>().text = GameObject.Find("CanvasPlaying").transform.GetChild(1).gameObject.GetComponent<Text>().text.ToString();
 
         }
     }
@@ -208,13 +209,11 @@ public class NextLevel : MonoBehaviour
 
     }
 
-    
-
 
     public int LevelIndex
     {
 
-        get => PlayerPrefs.GetInt(LevelIndexKey, 0);
+        get => PlayerPrefs.GetInt(LevelIndexKey, 1);
         private set
         {
             PlayerPrefs.SetInt(LevelIndexKey, value);

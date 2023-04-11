@@ -1629,6 +1629,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalCount: 0
+  MinBonus: 1
+  MaxBonus: 10
+  MinCrash: 1
+  MaxCrash: 10
+  value_bonus: 0
+  value_crash: 0
+  exist_object: 0
+  Bonus: {fileID: 0}
+  Crash: {fileID: 0}
   camera_main: {fileID: 1599249645}
   AudioClip_finish: {fileID: 8300000, guid: 628bc3d1a5d96b347ac70c1307c85f6a, type: 3}
   volume: 1
@@ -2377,8 +2386,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1100080525}
-        m_TargetAssemblyTypeName: ButtonNextWin, Assembly-CSharp
+      - m_Target: {fileID: 1100080526}
+        m_TargetAssemblyTypeName: NextLevel, Assembly-CSharp
         m_MethodName: PlayNext
         m_Mode: 1
         m_Arguments:
@@ -2455,6 +2464,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalCount: 0
+  MinBonus: 1
+  MaxBonus: 10
+  MinCrash: 1
+  MaxCrash: 10
+  value_bonus: 0
+  value_crash: 0
+  exist_object: 0
+  Bonus: {fileID: 0}
+  Crash: {fileID: 0}
   camera_main: {fileID: 0}
   AudioClip_finish: {fileID: 0}
   volume: 0
@@ -3726,7 +3744,6 @@ MonoBehaviour:
   speed_tail: 0
   camera_main: {fileID: 1599249645}
   Snake_link: {fileID: 208006940606756792, guid: ee670258a2ed1544397b864a1698575f, type: 3}
-  Level_Number: 0
   Count_Player: 0
   AudioClip_dead: {fileID: 8300000, guid: 4265a7036855d7b42b167df1b8b8cc31, type: 3}
   AudioClip_bad_wall: {fileID: 8300000, guid: 4265a7036855d7b42b167df1b8b8cc31, type: 3}
@@ -4237,6 +4254,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalCount: 0
+  MinBonus: 1
+  MaxBonus: 10
+  MinCrash: 1
+  MaxCrash: 10
+  value_bonus: 0
+  value_crash: 0
+  exist_object: 0
+  Bonus: {fileID: 0}
+  Crash: {fileID: 0}
   camera_main: {fileID: 0}
   AudioClip_finish: {fileID: 0}
   volume: 0

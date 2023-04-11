@@ -17,7 +17,7 @@ public class Snake : MonoBehaviour
 
     public GameObject Snake_link;
     
-    private float Sensitivity = 0.1f;
+ //   private float Sensitivity = 0.1f;
 
     public LinkedList<GameObject> snake_tail = new LinkedList<GameObject>();
 
@@ -82,9 +82,12 @@ public class Snake : MonoBehaviour
         if (GameObject.Find("Snake_head"))
         {
             int count_snake = int.Parse(GameObject.Find("Snake_head").transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text);
- 
-           
+
+
             GameObject.Find("Snake_head").transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = count_snake.ToString();
+
+
+      //      GameObject.Find("CanvasWin").transform.GetChild(1).gameObject.GetComponent<Text>().text = levelIndex.ToString();
 
             GameObject.Find("CanvasPlaying").GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
             temp_moveSpeed = _moveSpeed;
