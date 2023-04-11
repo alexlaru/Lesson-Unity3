@@ -1,11 +1,17 @@
 using UnityEngine;
+using UnityEditorInternal;
 
 public class Control_Snake : MonoBehaviour
 {
     public float speed = 10;
     public float Impulse = 50;
     private Vector3 _previousMousePosition;
-    public float Sensitivity=0.1f;
+    public float Sensitivity=0.2f;
+    public float angle = 0.5f;
+    private float MaxAngle = 45;
+    private float MinAngle = -45;
+    private float CurrentAngle = 0;
+    
 
     //    public GameObject Snake_head = GameObject.Find("Snake_head");
     //  public Rigidbody 
@@ -23,10 +29,8 @@ public class Control_Snake : MonoBehaviour
         Vector3 offset_right = transform.position + new Vector3(1, 0, 0);
         Vector3 direction_left = offset_left.normalized;
         Vector3 direction_right = offset_right.normalized;
-        
-        Move_Forward();
 
-
+       
         if (Input.GetMouseButton(0))
         {
             Vector3 delta = Input.mousePosition - _previousMousePosition;
@@ -42,22 +46,31 @@ public class Control_Snake : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow)) //налево 
         {
 
-            transform.position = transform.position - new Vector3(0.01f,0,0);
+           // transform.position = transform.position - new Vector3(0.01f,0,0);
 
-            //   GetComponent<Rigidbody>().AddForce(direction_left * Impulse, ForceMode.Impulse); 
-            //   Debug.Log(Impulse);
+           if(CurrentAngle > MinAngle)
+            {
+                CurrentAngle -= angle;
+                GameObject.Find("Snake_head").transform.Rotate(0, -angle, 0);
+            }
+            
+
+          
         }
 
         if (Input.GetKey(KeyCode.RightArrow)) //направо 
         {
-            transform.position = transform.position + new Vector3(0.01f, 0, 0);
-            //    GetComponent<Rigidbody>().AddForce(direction_right * Impulse, ForceMode.Impulse);
-            //   Debug.Log(Impulse);
+            //  transform.position = transform.position + new Vector3(0.01f, 0, 0);
+            if (CurrentAngle < MaxAngle)
+            {
+                CurrentAngle += angle;
+                GameObject.Find("Snake_head").transform.Rotate(0, angle, 0);
+            }
+                
         }
     }
 
-    private void Move_Forward()
-    {
-        transform.position = transform.position + transform.forward * speed * Time.deltaTime;
-    }
+   
+
+
 }

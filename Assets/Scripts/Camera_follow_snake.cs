@@ -5,20 +5,20 @@ using UnityEngine;
 public class Camera_follow_snake : MonoBehaviour
 {
     public GameObject Snake;
-   // public Vector3 PlatformToCameraOffset;
+   
     public float Speed=1;
- 
+    public bool Stop_moving=false;
 
 
-    // Update is called once per frame
+    
     void Update()
     {
 
-      //  if (Player.CurrentPlatform == null) return;
+      
 
-        Vector3 targetPosition = Snake.transform.position;// + PlatformToCameraOffset;
-        //         transform.position=targetPosition;
-        transform.position += new Vector3(0, 0, Speed*Time.deltaTime);// targetPosition.y;
+        Vector3 targetPosition = Snake.transform.position;
+  
+        transform.position += new Vector3(0, 0, Speed*Time.deltaTime);
 
 
 
